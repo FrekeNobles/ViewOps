@@ -3,8 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Dashboard from '@/views/Dashboard.vue'
 import MetricsView from '@/views/MetricsView.vue'
 import LogsView from '@/views/LogsView.vue'
-import AlertsView from '@/views/AlertsView.vue'
-import SettingsView from '@/views/SettingsView.vue'
+import InsightsView from '@/views/InsightsView.vue'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -31,13 +30,8 @@ const router = createRouter({
     },
 
     {
-      path: '/alerts',
-      component: AlertsView
-    },
-
-    {
-      path: '/settings',
-      component: SettingsView
+      path: '/insights',
+      component: InsightsView
     }
   ]
 })

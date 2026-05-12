@@ -16,7 +16,7 @@
     p-4 flex flex-col
     transition-transform duration-300
 
-    bg-gray-300 dark:bg-gray-900
+    bg-white dark:bg-gray-900
     border-gray-200 dark:border-gray-800
     "
 
@@ -28,11 +28,16 @@
     <!-- Header -->
     <div class="flex items-center justify-between mb-8">
 
-      <h2 class="text-2xl font-bold">
-        ViewOps
-      </h2>
+      <div>
+        <h2 class="text-2xl font-bold">
+          ViewOps
+        </h2>
 
-      <!-- Mobile Close -->
+        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">
+          Real-Time Infrastructure Analytics
+        </p>
+      </div>
+
       <button
         @click="ui.closeSidebar()"
         class="md:hidden text-gray-500 dark:text-gray-400"
@@ -135,7 +140,6 @@ const links = [
   { label: 'Overview', path: '/overview' },
   { label: 'Metrics', path: '/metrics' },
   { label: 'Logs', path: '/logs' },
-  { label: 'Alerts', path: '/alerts' },
-  { label: 'Settings', path: '/settings' }
+  { label: 'Insights', path: '/insights' }
 ]
 </script>
