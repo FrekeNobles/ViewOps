@@ -35,22 +35,35 @@ export function generateTelemetry(): TelemetryPoint {
 export function generateEvent(): TelemetryEvent | null {
   const chance = Math.random()
 
-  // keep it stable → low event frequency
-  if (chance > 0.85) {
-    const events = [
-      'Minor latency spike detected',
-      'Cache hit rate slightly dropped',
-      'API response time increased',
-      'Background job delay observed'
-    ]
+  if (chance > 0.88) {
+    return {
+      id: crypto.randomUUID(),
+      timestamp: Date.now(),
+      level: 'critical',
+      message: 'API error rate exceeded threshold'
+    }
+  }
 
+  if (chance > 0.80) {
     return {
       id: crypto.randomUUID(),
       timestamp: Date.now(),
       level: 'warning',
-      message: events[Math.floor(Math.random() * events.length)]
+      message: 'Elevated memory usage detected'
+    }
+  }
+
+  if (chance > 0.72) {
+    return {
+      id: crypto.randomUUID(),
+      timestamp: Date.now(),
+      level: 'info',
+      message: 'Background jobs completed successfully'
     }
   }
 
   return null
+}
+export function simulateConnectionIssue(): boolean {
+  return Math.random() > 0.97
 }
